@@ -26,6 +26,13 @@
   <a href="https://mertkayacs.com/?utm_source=github&utm_medium=readme&utm_campaign=Quadtree-Image-Compression-repo&utm_content=portfolio-badge"><img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-1E2A38?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xMiAyYTE0LjUgMTQuNSAwIDAgMCAwIDIwYTE0LjUgMTQuNSAwIDAgMCAwLTIwTTIgMTJoMjAiLz48L2c%2BPC9zdmc%2B&logoColor=white"></a>
 </p>
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/hero-dark.webp">
+    <img src="docs/assets/readme/hero-light.webp" alt="The test image on the left and level 4 of the quadtree output on the right, built from visible blocks" width="960">
+  </picture>
+</p>
+
 Quadtree Image Compression reads a square PPM image, builds a quadtree from its pixels and writes eight versions of the image. Each version merges regions whose colours differ by less than a threshold, from large coarse blocks to the full-detail image. The tree is written by hand with no libraries. It was coursework from 2019.
 
 ---
@@ -39,6 +46,49 @@ A single run produces the whole range from coarse to fine.
 | <img src="docs/assets/readme/icons/layers.svg" width="18" height="18" alt=""> **Eight thresholds per run** | [Main.java](Main.java) builds eight trees with thresholds from 14300 down to 0.000001 and writes the results as name-1.ppm to name-8.ppm, coarsest first. |
 | <img src="docs/assets/readme/icons/network.svg" width="18" height="18" alt=""> **A hand-written tree** | [QuadTree.java](QuadTree.java) is a tree ADT in which each node has 0 to 4 children. |
 | <img src="docs/assets/readme/icons/triangle-alert.svg" width="18" height="18" alt=""> **Limits stated up front** | The original notes say it works best on images with high detail and colour differences, reads only PPM files and reads only square images. |
+
+## A quick tour
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/coarse-dark.webp">
+        <img src="docs/assets/readme/tour/coarse-light.webp" alt="Test image beside level 2 of the output, made of large blocks">
+      </picture>
+      <h3>Coarse level</h3>
+      Level 2 of 8 merges regions into large blocks. The shapes are drawn for this tour.
+    </td>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/middle-dark.webp">
+        <img src="docs/assets/readme/tour/middle-light.webp" alt="Test image beside level 4 of the output">
+      </picture>
+      <h3>Middle level</h3>
+      Level 4 keeps the circle and the triangle recognisable, with visible block edges.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/fine-dark.webp">
+        <img src="docs/assets/readme/tour/fine-light.webp" alt="Test image beside level 6 of the output">
+      </picture>
+      <h3>Fine level</h3>
+      Level 6 is close to the input, with small blocks left along curved edges.
+    </td>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/split-dark.webp">
+        <img src="docs/assets/readme/tour/split-light.webp" alt="Code card showing the error calculation and the four-way split in Main.java">
+      </picture>
+      <h3>Splitting rule</h3>
+      A region is averaged, its error is measured, and it splits into four children when the error is above the threshold.
+    </td>
+  </tr>
+</table>
+
+<p align="center"><sub>Each image pair shows the test image on the left and one output level on the right. The test image was drawn for this tour. The code card shows Main.java as it is in the repository.</sub></p>
 
 ## Features
 
@@ -91,5 +141,7 @@ No. The outputs are plain PPM files again, so they are about the same size as th
 </details>
 
 If Quadtree Image Compression is useful to you, a ⭐ helps other people find it.
+
+Photos behind the screenshots are credited in [docs/assets/readme/CREDITS.md](docs/assets/readme/CREDITS.md).
 
 [![views](https://hits.sh/github.com/mertkayacs/Quadtree-Image-Compression.svg?view=today-total&style=flat-square&label=views&color=2E4A7D&labelColor=1E2A38)](https://github.com/mertkayacs/Quadtree-Image-Compression)
