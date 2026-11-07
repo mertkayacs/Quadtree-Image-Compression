@@ -61,11 +61,11 @@ A single run produces the whole range from coarse to fine.
     </td>
     <td width="50%" valign="top">
       <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/middle-dark.webp">
-        <img src="docs/assets/readme/tour/middle-light.webp" alt="Test image beside level 4 of the output">
+        <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/third-dark.webp">
+        <img src="docs/assets/readme/tour/third-light.webp" alt="Test image beside level 3 of the output">
       </picture>
-      <h3>Middle level</h3>
-      Level 4 keeps the circle and the triangle recognisable, with visible block edges.
+      <h3>Third level</h3>
+      At level 3 the ring and the gold circle start to appear. The triangle is still a single green block.
     </td>
   </tr>
   <tr>
