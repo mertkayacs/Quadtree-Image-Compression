@@ -80,10 +80,10 @@ A single run produces the whole range from coarse to fine.
     <td width="50%" valign="top">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme/tour/split-dark.webp">
-        <img src="docs/assets/readme/tour/split-light.webp" alt="Code card showing the error calculation and the four-way split in Main.java">
+        <img src="docs/assets/readme/tour/split-light.webp" alt="Code card showing the error calculation and the threshold test in Main.java">
       </picture>
       <h3>Splitting rule</h3>
-      A region is averaged, its error is measured, and it splits into four children when the error is above the threshold.
+      A region is averaged and its error is measured. The region splits into four children when the error is above the threshold.
     </td>
   </tr>
 </table>
